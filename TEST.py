@@ -221,7 +221,7 @@ def run_erp_process(file_path, test_type):
     workbook = load_workbook(file_path)
     log(f"工作表名稱：{workbook.sheetnames}")
 
-    sheet_names = workbook.sheetnames
+    sheet_names = [name.strip() for name in workbook.sheetnames]
     if(test_type == 2 or test_type == 3):
         dataResourceList = selectResourceList
 
